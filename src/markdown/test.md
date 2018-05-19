@@ -1,8 +1,11 @@
-# this is a test
+# Hello, welcome
 
-I think this is a test file, let's see
+Hello, this is the first post for my blog. Actually basically it is just a test post to make sure that my markdown is working and to get a feeling for the formatting.
 
-`yay`
+I built this generator myself using
 
-### everything is awesome
+- react
 
+- marksy
+
+- styled components
