@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Post from './components/Post';
-import {Files as files} from './markdown';
+import Home from './components/Home';
 
-const Home = () => (
-	<div>
-    	<h2>Home</h2>
-  	</div>
-)
 
 const About = () => (
 	<div>
@@ -44,8 +39,8 @@ const NavBar = styled.ul`
 
 const NavContents = styled.li`
 	display: inline-block;
-	height: 100%;
 	width: 20%;
+	height: 100%;
 `
 
 const NavButton = styled.div`
@@ -53,7 +48,6 @@ const NavButton = styled.div`
 	font-family: 'Lora', serif;
 	font-size: 1.0em;
 	text-align: center;
-	text-decoration: none;
 	border-left: solid 2px #6b6f83;
 
 	${NavButton}:hover {
@@ -69,14 +63,6 @@ const Line = styled.hr`
 `;
 
 class App extends Component {
-	state = {
-        posts: [],
-    }
-
-	componentDidMount = () => {
-		this.setState({posts: files.files});
-	}
-
 	render() {
 		return (
 			<div>
@@ -88,18 +74,15 @@ class App extends Component {
 					<Line />
 					<NavBar>
 						<NavContents>
-							<Link to="/"><NavButton>Home</NavButton></Link>
+							<Link to="/" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Home</NavButton></Link>
 						</NavContents>
 						<NavContents>
-							<Link to="/resume"><NavButton>Resume</NavButton></Link>
+							<Link to="/resume" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Resume</NavButton></Link>
 						</NavContents>
 						<NavContents>
-							<Link to="/works"><NavButton>What Im Working on</NavButton></Link>
+							<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>What Im Working on</NavButton></Link>
 						</NavContents>
 					</NavBar>
-					{this.state.posts.map((post, index) => {
-							return <div><Link to={`/posts/${index}`}>{post.title}</Link></div>
-					})}
 					<Route exact path="/" component={Home}/>
 					<Route path="/about" component={About}/>
 					<Route path={`/posts/:postId`} component={Post}/>
