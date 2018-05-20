@@ -33,7 +33,6 @@ const NavBar = styled.ul`
     background-color: #4844a3;
 	height: 5%;
 	width: 100%;
-    position: fixed;
 	overflow: auto;
 `
 
