@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Post from './components/Post';
 import Home from './components/Home';
 import Resume from './components/Resume';
+import Works from './components/Works';
 
 const BannerWrapper = styled.div`
 	top: 0px;
@@ -78,6 +79,7 @@ class App extends Component {
 					</NavBar>
 					<Route exact path="/" component={Home}/>
 					<Route path="/resume" component={Resume}/>
+					<Route path="/works" component={Works}/>
 					<Route path={`/posts/:postId`} component={Post}/>
 				</div>
 				</Router>
