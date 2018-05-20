@@ -28,6 +28,7 @@ const BannerTitle = styled.h1`
 	font-size: 6em;
 	word-wrap: break-word;
 	padding: 10px 0px;
+	font-family: 'Bree Serif', serif;
 `
 
 const Line = styled.hr`
