@@ -1,17 +1,19 @@
 import React, { Component, createElement } from 'react';
 import styled from 'styled-components';
 import marksy from 'marksy';
+import {Files as files} from '../markdown';
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
-  color: palevioletred;
+  color: #4844a3;
 `;
 
 const Paragraph = styled.p`
-  font-size: 1em;
-  color: limegreen;
+  font-size: 1.5em;
+  color: #282F3D;
   margin: auto;
+  width: 50%;
 `;
 
 const compile = marksy({
@@ -30,6 +32,11 @@ const compile = marksy({
 class Post extends Component {
     state = {
         compiled_md: null,
+        posts: [],
+    }
+
+    componentWillMount = () => {
+        this.setState({posts: files.files});
     }
 
     componentDidMount = () => {
@@ -46,7 +53,13 @@ class Post extends Component {
 
     fetchPost = () => {
         const { postId } = this.props.match.params;
-        const testFile = postId === "1" ? require("../markdown/test.md") : require("../markdown/test2.md");
+        let testFile = '';
+        if(!this.state.posts[parseInt(postId, 10)]) {
+            testFile = require(`../markdown/notFound.md`);
+        } else {
+            const postLink = this.state.posts[parseInt(postId, 10)].link
+            testFile = require(`../markdown/${postLink}`);
+        }
         fetch(testFile).then(response => {
             response.text().then(text => {
                 const compiled = compile(text);
