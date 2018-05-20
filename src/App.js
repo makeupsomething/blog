@@ -3,13 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Post from './components/Post';
 import Home from './components/Home';
-
-
-const About = () => (
-	<div>
-    	<h2>About</h2>
-  	</div>
-)
+import Resume from './components/Resume';
 
 const BannerWrapper = styled.div`
 	top: 0px;
@@ -83,7 +77,7 @@ class App extends Component {
 						</NavContents>
 					</NavBar>
 					<Route exact path="/" component={Home}/>
-					<Route path="/about" component={About}/>
+					<Route path="/resume" component={Resume}/>
 					<Route path={`/posts/:postId`} component={Post}/>
 				</div>
 				</Router>
