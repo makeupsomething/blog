@@ -17,7 +17,7 @@ const BannerTitle = styled.h1`
 	color: #4844a3;
 	font-size: 6em;
 	word-wrap: break-word;
-	padding: 10px 0px;
+	width: 75%
 	font-family: 'Bree Serif', serif;
 `
 
