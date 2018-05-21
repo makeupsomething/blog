@@ -13,7 +13,7 @@ const Paragraph = styled.p`
   font-size: 1.5em;
   color: #282F3D;
   margin: auto;
-  width: 50%;
+  width: 75%;
 `;
 
 const compile = marksy({

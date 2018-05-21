@@ -16,8 +16,9 @@ const BannerWrapper = styled.div`
 const BannerTitle = styled.h1`
 	color: #4844a3;
 	font-size: 6em;
-	word-wrap: break-word;
-	width: 75%
+	hyphens: auto;
+	width: 90%;
+	margin: auto;
 	font-family: 'Bree Serif', serif;
 `
 
@@ -26,8 +27,8 @@ const NavBar = styled.ul`
     margin: 0;
     padding: 0;
     background-color: #4844a3;
-	height: 5%;
 	width: 100%;
+	height: 25px;
 	overflow: auto;
 `
 
@@ -40,9 +41,8 @@ const NavContents = styled.li`
 const NavButton = styled.div`
 	height: 100%;
 	font-family: 'Lora', serif;
-	font-size: 1.0em;
+	font-size: 1.1em;
 	text-align: center;
-	border-left: solid 2px #6b6f83;
 
 	${NavButton}:hover {
 		background: #6b6f83;
@@ -77,6 +77,7 @@ class App extends Component {
 							<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>What Im Working on</NavButton></Link>
 						</NavContents>
 					</NavBar>
+					<Line />
 					<Route exact path="/" component={Home}/>
 					<Route path="/resume" component={Resume}/>
 					<Route path="/works" component={Works}/>

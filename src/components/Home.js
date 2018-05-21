@@ -13,7 +13,7 @@ const HomeWrapper = styled.div`
 
 const BannerTitle = styled.h1`
 	color: #4844a3;
-	font-size: 6em;
+	font-size: 2.5em;
 	word-wrap: break-word;
 	padding: 10px 0px;
     font-family: 'Bree Serif', serif;
@@ -21,7 +21,7 @@ const BannerTitle = styled.h1`
 
 const SecondaryTitle = styled.h2`
 	color: #7aacd4;
-	font-size: 3em;
+	font-size: 1.5em;
 	word-wrap: break-word;
 	padding: 10px 0px;
     font-family: 'Lora', serif;
