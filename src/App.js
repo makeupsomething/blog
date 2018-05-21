@@ -60,7 +60,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Router basename="/blog">
+				<Router basename="/blog" onUpdate={() => window.scrollTo(0, 0)}>
 				<div>
 					<BannerWrapper>
 						<BannerTitle>{`makeupsomethinglater's \n blog`}</BannerTitle>
