@@ -6,6 +6,12 @@ import Home from './components/Home';
 import Resume from './components/Resume';
 import Works from './components/Works';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
+//library.add(faGithub);
+
 const BannerWrapper = styled.header`
 	top: 0px;
 	background: #1d1e28;
@@ -57,12 +63,13 @@ const Line = styled.hr`
 `;
 
 const Footer = styled.footer`
-    position: absolute;
+    position: static;
     background: #1d1e28;
     height: 100px;
     width: 100%;
 	bottom: 0px;
 	border-top: solid 2px #7aacd4;
+	margin-top: 100px;
 `
 
 class App extends Component {
@@ -91,7 +98,9 @@ class App extends Component {
 					<Route path="/resume" component={Resume}/>
 					<Route path="/works" component={Works}/>
 					<Route path={`/posts/:postId`} component={Post}/>
-					<Footer />
+					<Footer>
+						<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
+					</Footer>
 				</div>
 				</Router>
 			</div>
