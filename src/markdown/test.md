@@ -14,3 +14,28 @@ I built this generator myself using
 - marksy
 
 - styled components
+
+Here is a [link](https://github.com/makeupsomething) to my github. I want to style links quite simply.
+
+> quotes should also be interesting
+
+```html
+<div>
+<p>Let's try some code, like HTML</p>
+</div>
+```
+
+or css
+
+```css
+color: green;
+margin: auto;
+width: 50%;
+```
+
+how about python?
+
+```python
+def testFunc():
+    print("Hello World!)
+```
