@@ -1,5 +1,3 @@
-# Hello, again
-
 
 ```js
 function hourglassSum(arr) {

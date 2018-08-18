@@ -74,7 +74,7 @@ class App extends Component {
 							<Link to="/resume" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Resume</NavButton></Link>
 						</NavContents>
 						<NavContents>
-							<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>What Im Working on</NavButton></Link>
+							<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Projects</NavButton></Link>
 						</NavContents>
 					</NavBar>
 					<Line />

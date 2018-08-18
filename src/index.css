@@ -8,3 +8,9 @@ html {
   background-color: #e2e0d4;
   color: #1d1e28;
 }
+
+.hljs {
+  width: 75%;
+  margin: auto;
+  border-radius: 12px;
+}
