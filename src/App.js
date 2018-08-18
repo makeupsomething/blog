@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Resume from './components/Resume';
 import Works from './components/Works';
 
-const BannerWrapper = styled.div`
+const BannerWrapper = styled.header`
 	top: 0px;
 	background: #1d1e28;
 	height: 25%;
@@ -56,6 +56,15 @@ const Line = styled.hr`
 	border: none;
 `;
 
+const Footer = styled.footer`
+    position: absolute;
+    background: #1d1e28;
+    height: 100px;
+    width: 100%;
+	bottom: 0px;
+	border-top: solid 2px #7aacd4;
+`
+
 class App extends Component {
 	render() {
 		return (
@@ -82,6 +91,7 @@ class App extends Component {
 					<Route path="/resume" component={Resume}/>
 					<Route path="/works" component={Works}/>
 					<Route path={`/posts/:postId`} component={Post}/>
+					<Footer />
 				</div>
 				</Router>
 			</div>

@@ -42,7 +42,11 @@ class Home extends Component {
                 <BannerTitle>Hi, Welcome to my blog, resume thing</BannerTitle>
                 <SecondaryTitle>Check out some things I've written recently</SecondaryTitle>
                 {this.state.posts.map((post, index) => {
-                    return <div><Link to={`/posts/${index}`} style={{textDecoration: "none"}}>{post.title}</Link></div>
+                    return <div key={index}>
+                    <Link to={`/posts/${index}`} style={{textDecoration: "none"}}>
+                    {post.title}
+                    </Link>
+                    </div>
                 })}
             </HomeWrapper>
         )
