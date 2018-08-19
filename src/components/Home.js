@@ -33,21 +33,23 @@ class Home extends Component {
     }
 
 	componentDidMount = () => {
+        console.log(files.files)
 		this.setState({posts: files.files});
     }
     
     render() {
         return (
             <HomeWrapper>
-                <BannerTitle>Hi, Welcome to my blog, resume thing</BannerTitle>
-                <SecondaryTitle>Check out some things I've written recently</SecondaryTitle>
-                {this.state.posts.map((post, index) => {
+                <BannerTitle>Hi, Welcome to my blog</BannerTitle>
+                <SecondaryTitle>🚧🚨Under construction!🚨🚧</SecondaryTitle>
+                {/*<SecondaryTitle>Check out some things I've written recently</SecondaryTitle>*/}
+                {/*this.state.posts.map((post, index) => {
                     return <div key={index}>
                     <Link to={`/posts/${index}`} style={{textDecoration: "none"}}>
                     {post.title}
                     </Link>
                     </div>
-                })}
+                })*/}
             </HomeWrapper>
         )
     }
