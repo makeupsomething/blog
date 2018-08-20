@@ -34,6 +34,7 @@ const Quote = styled.blockquote`
     width: 50%;
     margin: 30px auto;
     padding: 10px 0;
+    font-size: 1.0em !important;
 `
 
 const compile = marksy({
@@ -72,30 +73,28 @@ class Post extends Component {
     }
 
     componentDidMount = () => {
-        const { postId } = this.props.match.params;
         this.fetchPost();
     }
 
     componentDidUpdate = (prevProps) => {
-        const { postId } = this.props.match.params;
-        if(postId !== prevProps.match.params.postId) {
+        const { postLink } = this.props.match.params;
+        if(postLink !== prevProps.match.params.postLink) {
             this.fetchPost();
         }
     }
 
     fetchPost = () => {
-        const { postId } = this.props.match.params;
+        const { postLink } = this.props.match.params;
         let testFile = '';
-        if(!this.state.posts[parseInt(postId, 10)]) {
+
+        try {
+            testFile = require(`../markdown/${postLink}`)
+        } catch(error) {
             testFile = require(`../markdown/notFound.md`);
-        } else {
-            const postLink = this.state.posts[parseInt(postId, 10)].link
-            testFile = require(`../markdown/${postLink}`);
         }
+
         fetch(testFile).then(response => {
             response.text().then(text => {
-                const compiled = compile(text);
-                console.log(compile(text).tree[0].props)
                 this.setState({compiled_md: compile(text).tree})
             })
         });

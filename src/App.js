@@ -5,10 +5,10 @@ import Post from './components/Post';
 import Home from './components/Home';
 import Resume from './components/Resume';
 import Works from './components/Works';
+import TopicList from './components/TopicList';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 //library.add(faGithub);
 
@@ -94,12 +94,17 @@ class App extends Component {
 						</NavContents>
 					</NavBar>
 					<Line />
-					<Route exact path="/" component={Home}/>
-					<Route path="/resume" component={Resume}/>
-					<Route path="/works" component={Works}/>
-					<Route path={`/posts/:postId`} component={Post}/>
+					<main>
+						<Route exact path="/" component={Home}/>
+						<Route path="/resume" component={Resume}/>
+						<Route path="/works" component={Works}/>
+						<Route path={`/topics/:topic`} component={Topics}/>
+						<Route path={`/posts/:postLink`} component={Post}/>
+					</main>
+					<TopicList />
 					<Footer>
 						<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
+						<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />
 					</Footer>
 				</div>
 				</Router>

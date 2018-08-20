@@ -33,7 +33,7 @@ class Home extends Component {
     }
 
 	componentDidMount = () => {
-        console.log(files.files)
+        console.log(files.files.top)
 		this.setState({posts: files.files});
     }
     
@@ -42,14 +42,16 @@ class Home extends Component {
             <HomeWrapper>
                 <BannerTitle>Hi, Welcome to my blog</BannerTitle>
                 <SecondaryTitle>🚧🚨Under construction!🚨🚧</SecondaryTitle>
-                {/*<SecondaryTitle>Check out some things I've written recently</SecondaryTitle>*/}
-                {/*this.state.posts.map((post, index) => {
+                <SecondaryTitle>Check out some things I've written recently</SecondaryTitle>
+                {this.state.posts.top ? 
+                this.state.posts.top.map((post, index) => {
                     return <div key={index}>
-                    <Link to={`/posts/${index}`} style={{textDecoration: "none"}}>
+                    <Link to={`/posts/${post.link}`} style={{textDecoration: "none"}}>
                     {post.title}
                     </Link>
                     </div>
-                })*/}
+                }) :
+                null}
             </HomeWrapper>
         )
     }
