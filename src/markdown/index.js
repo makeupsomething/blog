@@ -1,20 +1,19 @@
 module.exports.Files = {
-    files: {
-        "top": [{
+    files: [
+        {
             title: 'First',
             link: "test.md",
             date: "01/08/2018",
             author: "Daryl Cole",
             tags: ["life", "japan", "food"],
-        }],
-        "life": [{
+        },
+        {
             title: 'Second',
             link: "topic1/test2.md",
             date: "02/08/2018",
             author: "Daryl Cole",
             tags: ["travel", "japan"],
-        }],
-        "hackerrank": [
+        },
         {
             title: 'Hacker Rank New Year',
             link: "hackerRank/hackerRank_new-year-chaos.md", 
@@ -30,4 +29,3 @@ module.exports.Files = {
             tags: ["code", "javascript", "hacker", "rank"], 
         }]
     }
-}

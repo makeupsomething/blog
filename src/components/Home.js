@@ -33,7 +33,9 @@ class Home extends Component {
     }
 
 	componentDidMount = () => {
-        console.log(files.files.top)
+        files.files = files.files.sort((x, y) => {
+            return new Date(y.date) - new Date(x.date);
+        });
 		this.setState({posts: files.files});
     }
     
@@ -43,8 +45,8 @@ class Home extends Component {
                 <BannerTitle>Hi, Welcome to my blog</BannerTitle>
                 <SecondaryTitle>🚧🚨Under construction!🚨🚧</SecondaryTitle>
                 <SecondaryTitle>Check out some things I've written recently</SecondaryTitle>
-                {this.state.posts.top ? 
-                this.state.posts.top.map((post, index) => {
+                {this.state.posts ? 
+                this.state.posts.map((post, index) => {
                     return <div key={index}>
                     <Link to={`/posts/${post.link}`} style={{textDecoration: "none"}}>
                     {post.title}

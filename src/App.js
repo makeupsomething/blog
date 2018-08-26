@@ -5,7 +5,6 @@ import Post from './components/Post';
 import Home from './components/Home';
 import Resume from './components/Resume';
 import Works from './components/Works';
-import TopicList from './components/TopicList';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -98,10 +97,8 @@ class App extends Component {
 						<Route exact path="/" component={Home}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
-						<Route path={`/topics/:topic`} component={Topics}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
 					</main>
-					<TopicList />
 					<Footer>
 						<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
 						<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />
