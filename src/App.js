@@ -97,6 +97,7 @@ class App extends Component {
 						<Route exact path="/" component={Home}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
+						<Route path={`/posts/list`} component={Post}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
 					</main>
 					<Footer>

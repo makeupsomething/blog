@@ -5,10 +5,17 @@ import Highlight from 'react-highlight';
 import {Files as files} from '../markdown';
 
 const Title = styled.h1`
-  	font-size: 2.5em;
+  	font-size: 2.7em;
   	text-align: center;
     color: #4844a3;
     font-family: 'Bree Serif', serif;
+`;
+
+const SecondaryTitle = styled.h2`
+  	font-size: 1.5em;
+  	text-align: center;
+    color: #7aacd4;
+    font-family: 'Lora', serif;
 `;
 
 const Paragraph = styled.p`
@@ -44,6 +51,9 @@ const compile = marksy({
     h1 ({id, children}) {
       return <Title>{children}</Title>
     },
+    h2 ({id, children}) {
+        return <SecondaryTitle>{children}</SecondaryTitle>
+      },
     p ({children}) {
         return <Paragraph>{children}</Paragraph>
     },
@@ -69,6 +79,9 @@ class Post extends Component {
     }
 
     componentWillMount = () => {
+        files.files = files.files.sort((x, y) => {
+            return new Date(y.date) - new Date(x.date);
+        });
         this.setState({posts: files.files});
     }
 
@@ -77,14 +90,14 @@ class Post extends Component {
     }
 
     componentDidUpdate = (prevProps) => {
-        const { postLink } = this.props.match.params;
-        if(postLink !== prevProps.match.params.postLink) {
+        const postLink = this.props.match ? this.props.match.params.postLink : this.state.posts[0].link;
+        if(prevProps.match && postLink !== prevProps.match.params.postLink) {
             this.fetchPost();
         }
     }
 
     fetchPost = () => {
-        const { postLink } = this.props.match.params;
+        const postLink = this.props.match ? this.props.match.params.postLink : this.state.posts[0].link;
         let testFile = '';
 
         try {
@@ -102,7 +115,11 @@ class Post extends Component {
 
     render() {
         return (
-            this.state.compiled_md ? <div>{this.state.compiled_md}</div> : null
+            this.state.compiled_md ? 
+            <div>
+                {this.state.compiled_md}
+            </div> : 
+            null
         )
     }
 }

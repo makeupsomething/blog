@@ -1,3 +1,7 @@
+# Hacker Rank Minimum Swaps
+
+## Here I try to do the minimum swaps task from hacker rank
+
 This seems similar to the [previous]('./hackerRank_new-year-chaos.md') challenge. So my first instince is to try a bubble sort again. I think I will run into some problems with this approach, but lets see.
 
 ```js
