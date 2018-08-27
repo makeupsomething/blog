@@ -5,6 +5,7 @@ import Post from './components/Post';
 import Home from './components/Home';
 import Resume from './components/Resume';
 import Works from './components/Works';
+import PostList from './components/PostList';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -97,7 +98,7 @@ class App extends Component {
 						<Route exact path="/" component={Home}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
-						<Route path={`/posts/list`} component={Post}/>
+						<Route path={`/list`} component={PostList}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
 					</main>
 					<Footer>

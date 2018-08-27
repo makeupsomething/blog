@@ -48,7 +48,7 @@ class Home extends Component {
                 <BannerTitle>Hi, Welcome to my blog</BannerTitle>
             </HomeWrapper>
             {this.state.posts ? <Post /> : null}
-            <Link to="/posts/list">
+            <Link to="/list">
                 <NavLink>See older posts >></NavLink>
             </Link>
             </div>
