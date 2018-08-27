@@ -62,14 +62,18 @@ const Line = styled.hr`
 	border: none;
 `;
 
+const Main = styled.main`
+	margin-bottom: 200px;
+`
+
 const Footer = styled.footer`
     position: static;
+ 	bottom:0;
+ 	left:0;
     background: #1d1e28;
     height: 100px;
     width: 100%;
-	bottom: 0px;
 	border-top: solid 2px #7aacd4;
-	margin-top: 100px;
 `
 
 class App extends Component {
@@ -94,13 +98,13 @@ class App extends Component {
 						</NavContents>
 					</NavBar>
 					<Line />
-					<main>
+					<Main>
 						<Route exact path="/" component={Home}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
 						<Route path={`/list`} component={PostList}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
-					</main>
+					</Main>
 					<Footer>
 						<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
 						<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />

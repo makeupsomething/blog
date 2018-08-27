@@ -4,6 +4,14 @@ import {Files as files} from '../markdown';
 import PostPreview from './PostPreview';
 import { Link } from 'react-router-dom';
 
+const Container = styled.div`
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 10px;
+`
+
 class PostList extends Component {
     state = {
         posts: [],
@@ -18,11 +26,13 @@ class PostList extends Component {
     
     render() {
         return (
-            <div>
+            <Container>
             {this.state.posts.map(post => {
-                return <PostPreview post={post}>{post.title}</PostPreview>
+                return (
+                    <PostPreview post={post}>{post.title}</PostPreview>
+                )
             })}
-            </div>
+            </Container>
         )
     }
 }
