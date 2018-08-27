@@ -21,13 +21,12 @@ const BannerTitle = styled.h1`
     font-family: 'Bree Serif', serif;
 `
 
-const SecondaryTitle = styled.h2`
-	color: #7aacd4;
-	font-size: 1.5em;
-	word-wrap: break-word;
-	padding: 10px 0px;
-    margin: auto;
+const NavLink = styled.a`
+    color: #4844a3;
     font-family: 'Lora', serif;
+    text-decoration: underline;
+    margin: 30px;
+    float: right;
 `
 
 class Home extends Component {
@@ -49,7 +48,9 @@ class Home extends Component {
                 <BannerTitle>Hi, Welcome to my blog</BannerTitle>
             </HomeWrapper>
             {this.state.posts ? <Post /> : null}
-            <Link to="/posts/list">See older</Link>
+            <Link to="/posts/list">
+                <NavLink>See older posts >></NavLink>
+            </Link>
             </div>
         )
     }
