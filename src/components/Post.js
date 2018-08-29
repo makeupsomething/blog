@@ -99,9 +99,8 @@ class Post extends Component {
     fetchPost = () => {
         const postLink = this.props.match ? this.props.match.params.postLink : this.state.posts[0].link;
         let testFile = '';
-
         try {
-            testFile = require(`../markdown/${postLink}`)
+            testFile = require(`../markdown/${decodeURIComponent(postLink)}`)
         } catch(error) {
             testFile = require(`../markdown/notFound.md`);
         }

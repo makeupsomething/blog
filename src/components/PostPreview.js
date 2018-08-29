@@ -1,13 +1,13 @@
-import React, { Component, createElement } from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import marksy from 'marksy';
-import Highlight from 'react-highlight';
 
 const Title = styled.h1`
   	font-size: 2.7em;
   	text-align: center;
     color: #4844a3;
     font-family: 'Bree Serif', serif;
+    text-decoration: underline;
 `;
 
 const SecondaryTitle = styled.h2`
@@ -23,10 +23,11 @@ const Preview = styled.div`
 
 class PostPreview extends Component {    
     render() {
-        const { title, headline } = this.props.post
+        const { title, headline, link } = this.props.post
         return (
             <Preview>
-                <Title>{title}</Title>
+                <div>{link}</div>
+                <Link to={`/posts/${encodeURIComponent(link)}`}><Title>{title}</Title></Link>
                 <SecondaryTitle>{headline}</SecondaryTitle>
             </Preview>
         )

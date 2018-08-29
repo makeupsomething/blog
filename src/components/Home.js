@@ -36,8 +36,11 @@ class Home extends Component {
 
 	componentDidMount = () => {
         files.files = files.files.sort((x, y) => {
+            console.log("dates", new Date(y.date), new Date(x.date))
+            console.log("diff", new Date(y.date) - new Date(x.date))
             return new Date(y.date) - new Date(x.date);
         });
+        console.log(files.files)
 		this.setState({posts: files.files});
     }
     
