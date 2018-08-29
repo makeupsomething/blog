@@ -1,3 +1,7 @@
+# Find the minimum product
+
+## I try to get a better solution to a coding challenge I received during an interview
+
 Given an array of integers find the minimum product that can be achieved with any pair of ints.
 
 For example in the array [0, 1, 3, 7] the minimum would be `0 * 1 = 0`
