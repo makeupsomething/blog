@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Files as files} from '../markdown';
 import PostPreview from './PostPreview';
-import { Link } from 'react-router-dom';
 
 const Container = styled.div`
+    width: 75%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    justify-content: space-evenly;
     margin-bottom: 10px;
 `
 
@@ -27,9 +27,9 @@ class PostList extends Component {
     render() {
         return (
             <Container>
-            {this.state.posts.map(post => {
+            {this.state.posts.map((post, index) => {
                 return (
-                    <PostPreview post={post}>{post.title}</PostPreview>
+                    <PostPreview post={post} key={index}>{post.title}</PostPreview>
                 )
             })}
             </Container>

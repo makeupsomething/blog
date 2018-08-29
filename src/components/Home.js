@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Files as files} from '../markdown';
-import { Link } from 'react-router-dom';
-import Post from './Post';
+import PostList from './PostList';
 
 const HomeWrapper = styled.div`
 	color: #1d1e28;
@@ -21,14 +20,6 @@ const BannerTitle = styled.h1`
     font-family: 'Bree Serif', serif;
 `
 
-const NavLink = styled.a`
-    color: #4844a3;
-    font-family: 'Lora', serif;
-    text-decoration: underline;
-    margin: 30px;
-    float: right;
-`
-
 class Home extends Component {
     state = {
         posts: [],
@@ -36,11 +27,8 @@ class Home extends Component {
 
 	componentDidMount = () => {
         files.files = files.files.sort((x, y) => {
-            console.log("dates", new Date(y.date), new Date(x.date))
-            console.log("diff", new Date(y.date) - new Date(x.date))
             return new Date(y.date) - new Date(x.date);
         });
-        console.log(files.files)
 		this.setState({posts: files.files});
     }
     
@@ -50,10 +38,7 @@ class Home extends Component {
             <HomeWrapper>
                 <BannerTitle>Hi, Welcome to my blog</BannerTitle>
             </HomeWrapper>
-            {this.state.posts ? <Post /> : null}
-            <Link to="/list">
-                <NavLink>See older posts >></NavLink>
-            </Link>
+            <PostList />
             </div>
         )
     }

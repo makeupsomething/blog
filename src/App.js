@@ -5,12 +5,10 @@ import Post from './components/Post';
 import Home from './components/Home';
 import Resume from './components/Resume';
 import Works from './components/Works';
-import PostList from './components/PostList';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-//library.add(faGithub);
 
 const BannerWrapper = styled.header`
 	top: 0px;
@@ -50,7 +48,7 @@ const NavButton = styled.div`
 	font-size: 1.1em;
 	text-align: center;
 
-	${NavButton}:hover {
+	:hover {
 		background: #6b6f83;
 	}
 `
@@ -102,7 +100,6 @@ class App extends Component {
 						<Route exact path="/" component={Home}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
-						<Route path={`/list`} component={PostList}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
 					</Main>
 					<Footer>
