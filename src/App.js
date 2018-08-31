@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Post from './components/Post';
-import Home from './components/Home';
+import PostList from './components/PostList';
 import Resume from './components/Resume';
 import Works from './components/Works';
 
@@ -12,14 +12,12 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const BannerWrapper = styled.header`
 	top: 0px;
-	background: #1d1e28;
 	height: 25%;
-	padding: 10px 0px;
 `
 
 const BannerTitle = styled.h1`
 	color: #4844a3;
-	font-size: 6em;
+	font-size: 5em;
 	hyphens: auto;
 	width: 90%;
 	margin: auto;
@@ -28,18 +26,20 @@ const BannerTitle = styled.h1`
 
 const NavBar = styled.ul`
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #4844a3;
-	width: 100%;
+    margin: auto;
+	margin-top: 10px;
+	width: 90%;
 	height: 25px;
 	overflow: auto;
+	padding: 0;
 `
 
 const NavContents = styled.li`
 	display: inline-block;
-	width: 20%;
 	height: 100%;
+	margin-right: 15px;
+	text-decoration: underline;
+	font-family: 'Lora', serif;
 `
 
 const NavButton = styled.div`
@@ -52,13 +52,6 @@ const NavButton = styled.div`
 		background: #6b6f83;
 	}
 `
-
-const Line = styled.hr`
-	background-color: #7aacd4;
-	height: 2px;
-	margin: 0px;
-	border: none;
-`;
 
 const Main = styled.main`
 	margin-bottom: 200px;
@@ -74,6 +67,8 @@ const Footer = styled.footer`
 	border-top: solid 2px #7aacd4;
 `
 
+//TODO: overscroll-behavior check this out
+
 class App extends Component {
 	render() {
 		return (
@@ -83,7 +78,6 @@ class App extends Component {
 					<BannerWrapper>
 						<BannerTitle>{`makeupsomethinglater's \n blog`}</BannerTitle>
 					</BannerWrapper>
-					<Line />
 					<NavBar>
 						<NavContents>
 							<Link to="/" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Home</NavButton></Link>
@@ -95,16 +89,19 @@ class App extends Component {
 							<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Projects</NavButton></Link>
 						</NavContents>
 					</NavBar>
-					<Line />
 					<Main>
-						<Route exact path="/" component={Home}/>
+						<Route exact path="/" component={PostList}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
 					</Main>
 					<Footer>
-						<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
-						<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />
+						<a href="https://github.com/makeupsomething">
+							<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
+						</a>
+						<a href="https://www.linkedin.com/in/daryl-cole/">
+							<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />
+						</a>
 					</Footer>
 				</div>
 				</Router>

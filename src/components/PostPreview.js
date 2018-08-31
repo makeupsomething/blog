@@ -16,15 +16,25 @@ const SecondaryTitle = styled.h2`
 `;
 
 const Date = styled.time`
+    display: block;
     font-family: 'Lora', serif;
+`
+
+const Pill = styled.span`
+    margin-right: 5px;
+    background: #7aacd4;
+    text-decoration: underline;
 `
 
 class PostPreview extends Component {    
     render() {
-        const { title, headline, link, date } = this.props.post
+        const { title, headline, link, date, tags } = this.props.post
         return (
             <div>
                 <Link to={`/posts/${encodeURIComponent(link)}`}><Title>{title}</Title></Link>
+                {tags.map((tag) => {
+                    return <Pill key={tag}>{tag}</Pill>
+                })}
                 <Date>{date}</Date>
                 <SecondaryTitle>{headline}</SecondaryTitle>
             </div>

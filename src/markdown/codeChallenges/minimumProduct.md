@@ -4,7 +4,7 @@
 
 Given an array of integers find the minimum product that can be achieved with any pair of ints.
 
-For example in the array [0, 1, 3, 7] the minimum would be `0 * 1 = 0`
+For example in the array [1, 1, 3, 7] the minimum would be `1 * 1 = 1` or [-3, -1, 2, 7, 4] the minimum would be `-3 * 4 = -12`
 
 The array can be any length and contain both positive and negitive numbers.
 

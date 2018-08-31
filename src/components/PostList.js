@@ -29,7 +29,7 @@ class PostList extends Component {
             <Container>
             {this.state.posts.map((post, index) => {
                 return (
-                    <PostPreview post={post} key={index}>{post.title}</PostPreview>
+                        <PostPreview post={post} key={index}>{post.title}</PostPreview>
                 )
             })}
             </Container>
