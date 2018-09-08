@@ -30,7 +30,7 @@ class Resume extends Component {
         return (
             <Wrapper>
                 <BannerTitle>My resume</BannerTitle>
-                <SecondaryTitle>You won't find much here, yet</SecondaryTitle>
+                <SecondaryTitle>🚧🚨Under construction!🚨🚧</SecondaryTitle>
             </Wrapper>
         )
     }

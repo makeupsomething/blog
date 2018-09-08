@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { 
+	BrowserRouter as Router, 
+	Route, 
+	Link,
+	Switch,
+} from 'react-router-dom';
 import styled from 'styled-components';
 import Post from './components/Post';
 import PostList from './components/PostList';
 import Resume from './components/Resume';
 import Works from './components/Works';
+import NotFound from './components/NotFound';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -23,6 +29,14 @@ const BannerTitle = styled.h1`
 	margin: auto;
 	font-family: 'Bree Serif', serif;
 `
+
+const SecondaryTitle = styled.h2`
+  	font-size: 1.5em;
+	width: 90%;
+	margin: auto;
+    color: #1d1e28;
+    font-family: 'Lora', serif;
+`;
 
 const NavBar = styled.ul`
     list-style-type: none;
@@ -67,45 +81,47 @@ const Footer = styled.footer`
 	border-top: solid 2px #7aacd4;
 `
 
-//TODO: overscroll-behavior check this out
-
 class App extends Component {
 	render() {
 		return (
-			<div>
-				<Router basename="/blog" onUpdate={() => window.scrollTo(0, 0)}>
-				<div>
-					<BannerWrapper>
+			<Router basename="/blog" onUpdate={() => window.scrollTo(0, 0)}>
+			<Fragment>
+				<BannerWrapper>
+					<Link to="/" style={{textDecoration: "none"}}>
 						<BannerTitle>{`makeupsomethinglater's \n blog`}</BannerTitle>
-					</BannerWrapper>
-					<NavBar>
-						<NavContents>
-							<Link to="/" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Home</NavButton></Link>
-						</NavContents>
-						<NavContents>
-							<Link to="/resume" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Resume</NavButton></Link>
-						</NavContents>
-						<NavContents>
-							<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Projects</NavButton></Link>
-						</NavContents>
-					</NavBar>
-					<Main>
+						<SecondaryTitle>On a quest to learn everything. Fighting Imposter Syndrome and Trying to Stay Humble.</SecondaryTitle>
+					</Link>
+				</BannerWrapper>
+				<NavBar>
+					<NavContents>
+						<Link to="/" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Home</NavButton></Link>
+					</NavContents>
+					<NavContents>
+						<Link to="/resume" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Resume</NavButton></Link>
+					</NavContents>
+					<NavContents>
+						<Link to="/works" style={{textDecoration: "none", color: "#7aacd4", margin: "auto"}}><NavButton>Projects</NavButton></Link>
+					</NavContents>
+				</NavBar>
+				<Main>
+					<Switch>
 						<Route exact path="/" component={PostList}/>
 						<Route path="/resume" component={Resume}/>
 						<Route path="/works" component={Works}/>
 						<Route path={`/posts/:postLink`} component={Post}/>
-					</Main>
-					<Footer>
-						<a href="https://github.com/makeupsomething">
-							<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
-						</a>
-						<a href="https://www.linkedin.com/in/daryl-cole/">
-							<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />
-						</a>
-					</Footer>
-				</div>
-				</Router>
-			</div>
+						<Route component={NotFound} />
+					</Switch>
+				</Main>
+				<Footer>
+					<a href="https://github.com/makeupsomething">
+						<FontAwesomeIcon icon={faGithub} size="3x"  pull="right" inverse />
+					</a>
+					<a href="https://www.linkedin.com/in/daryl-cole/">
+						<FontAwesomeIcon icon={faLinkedin} size="3x"  pull="right" inverse />
+					</a>
+				</Footer>
+			</Fragment>
+			</Router>
     	);
   	}
 }

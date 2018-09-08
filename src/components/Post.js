@@ -1,8 +1,8 @@
 import React, { Component, createElement } from 'react';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import marksy from 'marksy';
 import Highlight from 'react-highlight';
-import {Files as files} from '../markdown';
 
 const Title = styled.h1`
   	font-size: 2.7em;
@@ -75,37 +75,23 @@ const compile = marksy({
 class Post extends Component {
     state = {
         compiled_md: null,
-        posts: [],
-    }
-
-    componentWillMount = () => {
-        files.files = files.files.sort((x, y) => {
-            return new Date(y.date) - new Date(x.date);
-        });
-        this.setState({posts: files.files});
+        error: false,
     }
 
     componentDidMount = () => {
         this.fetchPost();
     }
 
-    componentDidUpdate = (prevProps) => {
-        const postLink = this.props.match ? this.props.match.params.postLink : this.state.posts[0].link;
-        if(prevProps.match && postLink !== prevProps.match.params.postLink) {
-            this.fetchPost();
-        }
-    }
-
     fetchPost = () => {
-        const postLink = this.props.match ? this.props.match.params.postLink : this.state.posts[0].link;
-        let testFile = '';
+        const postLink = this.props.match.params.postLink;
+        let post = '';
         try {
-            testFile = require(`../markdown/${decodeURIComponent(postLink)}`)
+            post = require(`../markdown/${decodeURIComponent(postLink)}`)
         } catch(error) {
-            testFile = require(`../markdown/notFound.md`);
+            this.setState({error: true})
         }
 
-        fetch(testFile).then(response => {
+        fetch(post).then(response => {
             response.text().then(text => {
                 this.setState({compiled_md: compile(text).tree})
             })
@@ -115,9 +101,9 @@ class Post extends Component {
     render() {
         return (
             this.state.compiled_md ? 
-            <div>
+            <React.Fragment>
                 {this.state.compiled_md}
-            </div> : 
+            </React.Fragment> : 
             null
         )
     }

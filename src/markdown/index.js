@@ -22,7 +22,7 @@ module.exports.Files = {
             link: "hackerRank/hackerRank_new-year-chaos.md", 
             date: "08/03/2018",
             author: "Daryl Cole", 
-            tags: ["code", "javascript", "hacker", "rank"], 
+            tags: ["code", "javascript", "hacker", "rank", "sdfdsfdsfd", "ddfd", "sdfds", "sdfdsfds"], 
         },
         {
             title: 'Hacker Rank Min Swaps',
