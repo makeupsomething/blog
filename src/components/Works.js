@@ -4,9 +4,9 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
 	color: #1d1e28;
 	height: 25%;
-    width: 75%;
     margin: auto;
     align-content: center;
+    background-color: #F4F4F4;
 `
 
 const BannerTitle = styled.h1`

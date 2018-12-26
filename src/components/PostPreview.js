@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -42,7 +42,9 @@ class PostPreview extends Component {
         const { title, headline, link, date, tags } = this.props.post
         return (
             <div>
-                <Link to={`/posts/${encodeURIComponent(link)}`}><Title>{title}</Title></Link>
+                <Link to={`/posts/${encodeURIComponent(link)}`}>
+                    <Title>{title}</Title>
+                </Link>
                 <Date>{date}</Date>
                 <SecondaryTitle>{headline}</SecondaryTitle>
                 <TagList>
