@@ -14,7 +14,8 @@ const Container = styled.div`
 `
 
 const HeadLine = styled.div`
-	height: ${props => props.height || "100vh"};
+    height: ${props => props.height || "100vh"};
+    width: 100vw;
 	background: linear-gradient(93deg, 
 	hsla(188, 90%, 50%,  0.73) 25%,
 	hsla(301, 100%, 60%,  0.3) 75%),
