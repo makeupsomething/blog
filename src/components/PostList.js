@@ -4,9 +4,13 @@ import {Files as files} from '../markdown';
 import PostPreview from './PostPreview';
 
 const Wrapper = styled.div`
-	color: #1d1e28;
-    margin: auto;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+    color: #1d1e28;
+    height: 75vh;
+    padding: 0 5%;
     background-color: white;
 `
 
@@ -18,10 +22,9 @@ const BannerTitle = styled.h1`
 `
 
 const Container = styled.div`
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     justify-content: space-evenly;
+    align-items: center;
 `
 
 class PostList extends Component {

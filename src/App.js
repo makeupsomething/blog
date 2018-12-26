@@ -25,9 +25,6 @@ class App extends Component {
 					<Main>
 						<Switch>
 							<Route exact path="/" component={Home}/>
-							{/* <Route exact path="/posts" component={PostList}/>
-							<Route path="/resume" component={Resume}/>
-							<Route path="/works" component={Works}/> */}
 							<Route path={`/posts/:postLink`} component={Post}/>
 							<Route component={NotFound} />
 						</Switch>

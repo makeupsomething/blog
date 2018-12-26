@@ -21,10 +21,12 @@ const HeaderWrapper = styled.span`
 
 const HeaderTitle = styled.h1`
 	color: white;
+	font-size: 3.5em;
 `
 
 const SubTitle = styled.h2`
 	color: white;
+	font-size: 1.5em;
 `;
 
 function Header() {

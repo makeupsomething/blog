@@ -1,13 +1,17 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+const Container = styled.div`
+    width: 33%;
+`
 
 const Title = styled.h1`
   	font-size: 2.7em;
     width: 90%;
     color: #4844a3;
-    font-family: 'Bree Serif', serif;
     text-decoration: underline;
+    font-family: 'Lora', serif;
 `;
 
 const SecondaryTitle = styled.h2`
@@ -41,7 +45,7 @@ class PostPreview extends Component {
     render() {
         const { title, headline, link, date, tags } = this.props.post
         return (
-            <div>
+            <Container>
                 <Link to={`/posts/${encodeURIComponent(link)}`}>
                     <Title>{title}</Title>
                 </Link>
@@ -52,7 +56,7 @@ class PostPreview extends Component {
                     return <Pill key={tag}>{tag}</Pill>
                 })}
                 </TagList>
-            </div>
+            </Container>
         )
     }
 }

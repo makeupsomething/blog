@@ -14,13 +14,14 @@ const Container = styled.div`
 `
 
 const HeadLine = styled.div`
-	height: 100vh;
+	height: ${props => props.height || "100vh"};
 	background: linear-gradient(93deg, 
 	hsla(188, 90%, 50%,  0.73) 25%,
 	hsla(301, 100%, 60%,  0.3) 75%),
 	linear-gradient(0deg, 
 	hsla(53, 93%, 50%,  0.75) 30%,
-	hsla(291, 92%, 50%,  0.5) 70%);
+    hsla(291, 92%, 50%,  0.5) 70%);
+    margin: 0;
 `
 
 function Home() {
@@ -35,7 +36,7 @@ function Home() {
             <Container id="blog">
                 <PostList />
             </Container>
-            <HeadLine id="about">
+            <HeadLine id="about" height="75vh">
                 <About />
             </HeadLine>
         </Fragment>
