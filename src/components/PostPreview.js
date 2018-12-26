@@ -16,7 +16,7 @@ const Title = styled.h1`
 
 const SecondaryTitle = styled.h2`
   	font-size: 1.5em;
-      color: #1d1e28;
+    color: #1d1e28;
     font-family: 'Lora', serif;
 `;
 

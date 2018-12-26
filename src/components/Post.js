@@ -1,23 +1,39 @@
-import React, { Component, createElement } from 'react';
+import React, { Component, createElement, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import marksy from 'marksy';
 import Highlight from 'react-highlight';
 
-const Title = styled.h1`
 
+const Wrapper = styled.div`
+	color: #1d1e28;
+    width: 50vw;
+    margin: auto;
+    background-color: #F4F4F4;
+`
+
+const Title = styled.h1`
+  	font-size: 2.7em;
+    color: #4844a3;
+    font-family: 'Lora', serif;
 `;
 
 const SecondaryTitle = styled.h2`
+  	font-size: 1.7em;
+    color: #7aacd4;
+    font-family: 'Lora', serif;
 `;
 
 const Paragraph = styled.p`
+    font-size: 1.2em;
+    font-family: 'Bree Serif', serif;
 `;
 
 const UnorderedList = styled.ul`
     list-style: square;
 `
 
-const Link = styled.a`
+const HyperLink = styled.a`
     color: #4844a3;
     text-decoration-line: underline;
 `
@@ -29,6 +45,31 @@ const Quote = styled.blockquote`
     margin: 30px auto;
     padding: 10px 0;
     font-size: 1.0em !important;
+`
+
+
+const HeadLine = styled.div`
+    height: ${props => props.height || "100vh"};
+    width: 100vw;
+	background: linear-gradient(93deg, 
+	hsla(188, 90%, 50%,  0.73) 25%,
+	hsla(301, 100%, 60%,  0.3) 75%),
+	linear-gradient(0deg, 
+	hsla(53, 93%, 50%,  0.75) 30%,
+    hsla(291, 92%, 50%,  0.5) 70%);
+    margin: 0;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+`
+
+const HeaderTitle = styled.span`
+	color: white;
+    font-size: 3.5em;
+    text-decoration: none;
+    font-family: 'Bree Serif', serif;
 `
 
 const compile = marksy({
@@ -48,7 +89,7 @@ const compile = marksy({
         return <UnorderedList>{children}</UnorderedList>
     },
     a ({children, href}) {
-        return <Link href={href}>{children}</Link>
+        return <HyperLink href={href}>{children}</HyperLink>
     },
     blockquote ({children}) {
         return <Quote>{children}</Quote>
@@ -87,11 +128,20 @@ class Post extends Component {
 
     render() {
         return (
-            this.state.compiled_md ? 
-            <React.Fragment>
+            <Fragment>
+            <HeadLine height="30vh">
+            <Link to={`/`} style={{textDecoration: "none", color: "#7aacd4"}}>
+                <HeaderTitle>
+                    makeupsomethinglater
+                </HeaderTitle>
+            </Link>
+            </HeadLine>
+            {this.state.compiled_md ? 
+            <Wrapper>
                 {this.state.compiled_md}
-            </React.Fragment> : 
-            null
+            </Wrapper> : 
+            null}
+            </Fragment>
         )
     }
 }
