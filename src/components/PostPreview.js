@@ -36,7 +36,6 @@ const TagList = styled.ul`
 const Pill = styled.li`
     margin-right: 5px;
     margin-bottom: 5px;
-    background: #7aacd4;
     text-decoration: underline;
     float: left;
 `
@@ -50,11 +49,6 @@ function PostPreview(props) {
             </Link>
             <Date>{date}</Date>
             <SecondaryTitle>{headline}</SecondaryTitle>
-            <TagList>
-            {tags.map((tag) => {
-                return <Pill key={tag}>{tag}</Pill>
-            })}
-            </TagList>
         </Container>
     )
 }
