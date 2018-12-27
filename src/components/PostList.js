@@ -2,29 +2,19 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import {Files as files} from '../markdown';
 import PostPreview from './PostPreview';
+import { Wrapper, SectionTitle } from './styled/Section'
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: flex-start;
-    color: #1d1e28;
-    height: 75vh;
-    padding: 0 5%;
-    background-color: white;
-`
-
-const BannerTitle = styled.h1`
-	color: #4844a3;
-    font-size: 2.5em;
-	word-wrap: break-word;
-    font-family: 'Bree Serif', serif;
-`
 
 const Container = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media (max-width: 700px) {
+		flex-direction: column;
+		justify-content: space-evenly;
+        align-items: center;
+	}
 `
 
 class PostList extends Component {
@@ -41,15 +31,15 @@ class PostList extends Component {
     
     render() {
         return (
-            <Wrapper>
-            <BannerTitle>Some stuff that I have written</BannerTitle>
-            <Container>
-            {this.state.posts.map((post, index) => {
-                return (
-                    <PostPreview post={post} key={index}>{post.title}</PostPreview>
-                )
-            })}
-            </Container>
+            <Wrapper backgroundColor="white">
+                <SectionTitle>Some stuff that I have written</SectionTitle>
+                <Container>
+                {this.state.posts.map((post, index) => {
+                    return (
+                        <PostPreview post={post} key={index}>{post.title}</PostPreview>
+                    )
+                })}
+                </Container>
             </Wrapper>
         )
     }

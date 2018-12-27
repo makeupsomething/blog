@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react'
 import NavBar from './NavBar'
 import styled from 'styled-components'
-import {colors} from '../styles/base'
 
 const Parent = styled.div`
 	height: 100vh;
@@ -10,6 +9,12 @@ const Parent = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (max-width: 700px) {
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
 `
 
 const HeaderWrapper = styled.span`
@@ -22,6 +27,7 @@ const HeaderWrapper = styled.span`
 const HeaderTitle = styled.h1`
 	color: white;
 	font-size: 3.5em;
+	hyphens: auto;
 `
 
 const SubTitle = styled.h2`

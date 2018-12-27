@@ -2,11 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lora', serif;
+  width: 100vw;
 }
 
 html {
-  background-color: #F4F4F4;
-  color: #312F2F;
+  width: 100vw;
 }
 
 .hljs {
