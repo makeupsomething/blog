@@ -48,14 +48,6 @@ function Works() {
                         Currently still in development.
                     </Paragraph>
                 </ListItem>
-                <ListItem>
-                    <Link href="#">Sudoku</Link>
-                    <Paragraph>
-                        Just a simple sudoku game generater, generate a game and check your solution.
-                        Solves sudokus using simple backtracking
-                        Currently still in development.
-                    </Paragraph>
-                </ListItem>
             </UnorderedList>
         </Wrapper>
     )
