@@ -1,12 +1,15 @@
 {
-  "main.css": "static/css/main.ac2ac834.css",
-  "main.css.map": "static/css/main.ac2ac834.css.map",
-  "main.js": "static/js/main.6354436c.js",
-  "main.js.map": "static/js/main.6354436c.js.map",
+  "main.css": "static/css/main.c7914bce.css",
+  "main.css.map": "static/css/main.c7914bce.css.map",
+  "main.js": "static/js/main.ae0c15be.js",
+  "main.js.map": "static/js/main.ae0c15be.js.map",
+  "static/media/domTraversal.md": "static/media/domTraversal.67663f51.md",
   "static/media/hackerRank_2dArr.md": "static/media/hackerRank_2dArr.249c9b6c.md",
   "static/media/hackerRank_new-year-chaos.md": "static/media/hackerRank_new-year-chaos.bfa16e88.md",
-  "static/media/minimum-swaps-2.md": "static/media/minimum-swaps-2.94f595a7.md",
+  "static/media/minimum-swaps-2.md": "static/media/minimum-swaps-2.8778ca44.md",
+  "static/media/minimumProduct.md": "static/media/minimumProduct.73fb1acc.md",
   "static/media/notFound.md": "static/media/notFound.0025d1fc.md",
   "static/media/test.md": "static/media/test.bb30f118.md",
-  "static/media/test2.md": "static/media/test2.bfd20c1f.md"
+  "static/media/test2.md": "static/media/test2.bfd20c1f.md",
+  "static/media/welcome.md": "static/media/welcome.57883d2a.md"
 }
