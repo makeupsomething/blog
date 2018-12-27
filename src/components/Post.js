@@ -9,7 +9,9 @@ const Wrapper = styled.div`
 	color: #1d1e28;
     width: 50vw;
     margin: auto;
-    background-color: #F4F4F4;
+    @media (max-width: 700px) {
+        width: 80vw;
+	}
 `
 
 const Title = styled.h1`
@@ -69,6 +71,7 @@ const HeaderTitle = styled.span`
 	color: white;
     font-size: 3.5em;
     text-decoration: none;
+    hyphens: auto;
     font-family: 'Bree Serif', serif;
 `
 
