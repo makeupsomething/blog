@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -25,15 +25,13 @@ const SecondaryTitle = styled.h2`
     font-family: 'Lora', serif;
 `
 
-class Resume extends Component {    
-    render() {
-        return (
-            <Wrapper>
-                <BannerTitle>My resume</BannerTitle>
-                <SecondaryTitle>🚧🚨Under construction!🚨🚧</SecondaryTitle>
-            </Wrapper>
-        )
-    }
+function Resume() {
+    return (
+        <Wrapper>
+            <BannerTitle>My resume</BannerTitle>
+            <SecondaryTitle>🚧🚨Under construction!🚨🚧</SecondaryTitle>
+        </Wrapper>
+    )
 }
 
 export default Resume;

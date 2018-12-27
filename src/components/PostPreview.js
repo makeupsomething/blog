@@ -1,18 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+const Container = styled.div`
+    width: 33%;
+    @media (max-width: 700px) {
+        width: 100%;
+	}
+`
 
 const Title = styled.h1`
   	font-size: 2.7em;
     width: 90%;
     color: #4844a3;
-    font-family: 'Bree Serif', serif;
     text-decoration: underline;
+    font-family: 'Lora', serif;
 `;
 
 const SecondaryTitle = styled.h2`
   	font-size: 1.5em;
-      color: #1d1e28;
+    color: #1d1e28;
     font-family: 'Lora', serif;
 `;
 
@@ -32,27 +39,21 @@ const TagList = styled.ul`
 const Pill = styled.li`
     margin-right: 5px;
     margin-bottom: 5px;
-    background: #7aacd4;
     text-decoration: underline;
     float: left;
 `
 
-class PostPreview extends Component {    
-    render() {
-        const { title, headline, link, date, tags } = this.props.post
-        return (
-            <div>
-                <Link to={`/posts/${encodeURIComponent(link)}`}><Title>{title}</Title></Link>
-                <Date>{date}</Date>
-                <SecondaryTitle>{headline}</SecondaryTitle>
-                <TagList>
-                {tags.map((tag) => {
-                    return <Pill key={tag}>{tag}</Pill>
-                })}
-                </TagList>
-            </div>
-        )
-    }
+function PostPreview(props) {
+    const { title, headline, link, date, tags } = props.post
+    return (
+        <Container>
+            <Link to={`/posts/${encodeURIComponent(link)}`}>
+                <Title>{title}</Title>
+            </Link>
+            <Date>{date}</Date>
+            <SecondaryTitle>{headline}</SecondaryTitle>
+        </Container>
+    )
 }
 
 export default PostPreview;
