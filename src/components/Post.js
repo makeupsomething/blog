@@ -132,7 +132,7 @@ class Post extends Component {
     render() {
         return (
             <Fragment>
-            <HeadLine height="30vh">
+            <HeadLine height="fit-content">
             <Link to={`/`} style={{textDecoration: "none", color: "#7aacd4"}}>
                 <HeaderTitle>
                     makeupsomethinglater
