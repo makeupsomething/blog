@@ -1,17 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from './styled/Section'
+import { SectionTitle, Parent } from './styled/Section'
 
-const Parent = styled.div`
-	height: 75vh;
-	padding: 0 5%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-`
-
-const Paragraph = styled.p`
+const AboutText = styled.p`
 	font-size: 1.5em;
     color: white;
     font-family: 'Bree Serif', serif;
@@ -30,12 +21,12 @@ const Link = styled.a`
 
 export default function About() {
     return (
-        <Parent>
+        <Parent height="75vh">
             <SectionTitle inputColor="white">Hi 👋</SectionTitle>
-            <Paragraph>
+            <AboutText>
                 Thank you for checking out my site!
                 I am a web developer in Tokyo, Japan
-            </Paragraph>
+            </AboutText>
             <SocialSection>
                 <Link href="https://github.com/makeupsomething">
                     <ion-icon name="logo-github" size="large"></ion-icon>
