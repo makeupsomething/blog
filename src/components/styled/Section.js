@@ -38,3 +38,10 @@ export const Parent = styled.div`
 		align-items: center;
 	}
 `
+
+export const SectionText = styled.p`
+	font-size: 1.5em;
+  	color: ${props => props.inputColor || "#282F3D"};
+  	margin-top: 10px;
+    font-family: 'Bree Serif', serif;
+`;

@@ -1,12 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle, Parent } from './styled/Section'
-
-const AboutText = styled.p`
-	font-size: 1.5em;
-    color: white;
-    font-family: 'Bree Serif', serif;
-`;
+import { SectionTitle, Parent, SectionText } from './styled/Section'
 
 const SocialSection = styled.div`
     display: flex;
@@ -23,10 +17,10 @@ export default function About() {
     return (
         <Parent height="75vh">
             <SectionTitle inputColor="white">Hi 👋</SectionTitle>
-            <AboutText>
+            <SectionText inputColor="white">
                 Thank you for checking out my site!
                 I am a web developer in Tokyo, Japan
-            </AboutText>
+            </SectionText>
             <SocialSection>
                 <Link href="https://github.com/makeupsomething">
                     <ion-icon name="logo-github" size="large"></ion-icon>
