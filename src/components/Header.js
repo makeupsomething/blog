@@ -1,23 +1,9 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import NavBar from './NavBar'
 import styled from 'styled-components'
+import { Parent } from './styled/Section'
 
-const Parent = styled.div`
-	height: 100vh;
-	padding: 0 5%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-
-	@media (max-width: 700px) {
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-	}
-`
-
-const HeaderWrapper = styled.span`
+const HeaderWrapper = styled.header`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -37,15 +23,15 @@ const SubTitle = styled.h2`
 
 function Header() {
     return (
-		<Fragment>
-			<Parent>
+		<Parent height="100vh">
 			<HeaderWrapper>
 				<HeaderTitle>{`makeupsomethinglater`}</HeaderTitle>
-				<SubTitle>Just keeping my head above the water</SubTitle>
+				<SubTitle>Just keeping my head above the water 
+					<span role="img" aria-label="wave">🌊</span>
+				</SubTitle>
 			</HeaderWrapper>
 			<NavBar/>
-			</Parent>
-		</Fragment>
+		</Parent>
     )
 }
 

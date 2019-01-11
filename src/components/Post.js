@@ -50,7 +50,7 @@ const Quote = styled.blockquote`
 `
 
 
-const HeadLine = styled.div`
+const HeadLine = styled.header`
     height: ${props => props.height || "100vh"};
     width: 100vw;
 	background: linear-gradient(93deg, 
@@ -132,18 +132,18 @@ class Post extends Component {
     render() {
         return (
             <Fragment>
-            <HeadLine height="30vh">
-            <Link to={`/`} style={{textDecoration: "none", color: "#7aacd4"}}>
-                <HeaderTitle>
-                    makeupsomethinglater
-                </HeaderTitle>
-            </Link>
-            </HeadLine>
-            {this.state.compiled_md ? 
-            <Wrapper>
-                {this.state.compiled_md}
-            </Wrapper> : 
-            null}
+                <HeadLine height="fit-content">
+                <Link to={`/`} style={{textDecoration: "none", color: "#7aacd4"}}>
+                    <HeaderTitle>
+                        makeupsomethinglater
+                    </HeaderTitle>
+                </Link>
+                </HeadLine>
+                {this.state.compiled_md ? 
+                <Wrapper>
+                    {this.state.compiled_md}
+                </Wrapper> : 
+                null}
             </Fragment>
         )
     }

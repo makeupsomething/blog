@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Files as files} from '../markdown';
 import PostPreview from './PostPreview';
