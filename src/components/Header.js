@@ -26,7 +26,9 @@ function Header() {
 		<Parent height="100vh">
 			<HeaderWrapper>
 				<HeaderTitle>{`makeupsomethinglater`}</HeaderTitle>
-				<SubTitle>Just keeping my head above the water 🌊</SubTitle>
+				<SubTitle>Just keeping my head above the water 
+					<span role="img" aria-label="wave">🌊</span>
+				</SubTitle>
 			</HeaderWrapper>
 			<NavBar/>
 		</Parent>

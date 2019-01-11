@@ -16,7 +16,9 @@ const Link = styled.a`
 export default function About() {
     return (
         <Parent height="75vh">
-            <SectionTitle inputColor="white">Hi 👋</SectionTitle>
+            <SectionTitle inputColor="white">Hi 
+                <span role="img" aria-label="hand waving">👋</span>
+            </SectionTitle>
             <SectionText inputColor="white">
                 Thank you for checking out my site!
                 I am a web developer in Tokyo, Japan

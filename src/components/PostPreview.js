@@ -25,7 +25,7 @@ const Date = styled.time`
 `
 
 function PostPreview(props) {
-    const { title, headline, link, date, tags } = props.post
+    const { title, headline, link, date } = props.post
     return (
         <Container>
             <Link to={`/posts/${encodeURIComponent(link)}`}>

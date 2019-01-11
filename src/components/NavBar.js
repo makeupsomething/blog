@@ -17,7 +17,7 @@ const NavButton = styled.div`
     margin: 0;
     border: solid 1px white;
 
-    ${NavButton}:hover {
+    :hover {
         color: black;
         background-color: white;
         transition: all .5s
