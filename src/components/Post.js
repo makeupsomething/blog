@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import marksy from 'marksy';
 import Highlight from 'react-highlight';
+import {Helmet} from 'react-helmet'
 
 
 const Wrapper = styled.div`
@@ -132,6 +133,10 @@ class Post extends Component {
     render() {
         return (
             <Fragment>
+                            <Helmet>
+                <title>My Title</title>
+                <meta name="Description" content="The post content" />
+            </Helmet>
                 <HeadLine height="fit-content">
                 <Link to={`/`} style={{textDecoration: "none", color: "#7aacd4"}}>
                     <HeaderTitle>

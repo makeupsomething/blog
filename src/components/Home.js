@@ -4,6 +4,7 @@ import Header from'./Header';
 import About from './About';
 import PostList from './PostList';
 import Works from './Works';
+import {Helmet} from 'react-helmet'
 
 const Container = styled.div`
     margin: auto;
@@ -28,6 +29,10 @@ const HeadLine = styled.div`
 function Home() {
     return (
         <Fragment>
+            <Helmet>
+                <title>My Title</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <HeadLine>
 				<Header />
 			</HeadLine>
