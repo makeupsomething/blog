@@ -10,7 +10,7 @@ import Home from './components/Home';
 
 export default function App() {
 	return (
-		<Router basename="/blog" onUpdate={() => window.scrollTo(0, 0)}>
+		<Router basename="/" onUpdate={() => window.scrollTo(0, 0)}>
 			<Fragment>
 				<Switch>
 					<Route exact path="/" component={Home}/>
