@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://makeupsomething.github.io/blog",
+  "homepage": "https://makeupsomethinglater.dev",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "marksy": "^6.0.3",
